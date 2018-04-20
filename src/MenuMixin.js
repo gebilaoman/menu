@@ -194,6 +194,7 @@ const MenuMixin = {
       props.className,
       `${props.prefixCls}-${props.mode}`,
     );
+    const focusable = props.focusable;
     [
       'defaultSelectedKeys',
       'selectedKeys',
@@ -216,6 +217,8 @@ const MenuMixin = {
       'multiple',
       'onOpenChange',
       'visible',
+      'focusable',
+      'defaultActiveFirst',
     ].forEach(key => delete props[key]);
     const domProps = {
       ...props,
@@ -226,7 +229,7 @@ const MenuMixin = {
     if (props.id) {
       domProps.id = props.id;
     }
-    if (props.focusable) {
+    if (focusable) {
       domProps.tabIndex = '0';
       domProps.onKeyDown = this.onKeyDown;
     }
