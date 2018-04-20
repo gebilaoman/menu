@@ -5,7 +5,6 @@ import createChainedFunction from 'rc-util/lib/createChainedFunction';
 import classNames from 'classnames';
 import { getKeyFromChildrenIndex, loopMenuItem } from './util';
 import DOMWrap from './DOMWrap';
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 function allDisabled(arr) {
   if (!arr.length) {
