@@ -435,7 +435,6 @@ const SubMenu = createReactClass({
     const popupPlacement = popupPlacementMap[props.mode];
     const popupClassName = props.mode === 'inline' ? '' : props.popupClassName;
     menuInheritProps.forEach(key => delete props[key]);
-    console.log(props)
     return (
       <li {...props} {...mouseEvents} className={className}>
         {isInlineMode && title}

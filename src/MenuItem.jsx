@@ -159,7 +159,7 @@ export const MenuItem = createReactClass({
         onMouseEnter: this.onMouseEnter,
       };
     }
-    menuInheritProps.forEach(key => delete props[key])
+    menuInheritProps.forEach(key => delete props[key]);
     const style = {
       ...props.style,
     };
