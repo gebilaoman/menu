@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
+import { menuInheritProps } from './util';
 
 const MenuItemGroup = createReactClass({
   displayName: 'MenuItemGroup',
@@ -27,11 +28,7 @@ const MenuItemGroup = createReactClass({
     const { className = '', rootPrefixCls } = props;
     const titleClassName = `${rootPrefixCls}-item-group-title`;
     const listClassName = `${rootPrefixCls}-item-group-list`;
-    [
-      'renderMenuItem',
-      'index',
-      'rootPrefixCls',
-    ].forEach(key => delete props[key]);
+    menuInheritProps.forEach(key => delete props[key]);
     return (
       <li {...props} className={`${className} ${rootPrefixCls}-item-group`}>
         <div
